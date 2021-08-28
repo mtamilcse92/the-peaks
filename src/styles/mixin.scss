@@ -1,0 +1,35 @@
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 480px;
+$mobile-landscape: 640px;
+
+@mixin media($breakpoint) {
+  
+    @if $breakpoint==desktop {
+      @media only screen and (min-width: $desktop) {
+        @content;
+      }
+    }
+
+    @if $breakpoint==tablet {
+      @media only screen and (min-width: $tablet)
+      and (max-width: $desktop) {
+        @content;
+      }
+    }
+  
+    @if $breakpoint==mobile {
+      @media only screen and (max-width: $mobile) 
+      and (orientation: portrait) {
+        @content;
+      }
+    }
+  
+    @if $breakpoint==mobile-landscape {
+      @media only screen and (max-width: $mobile-landscape)
+      and (orientation: landscape) {
+        @content;
+      }
+    }
+    
+  }
