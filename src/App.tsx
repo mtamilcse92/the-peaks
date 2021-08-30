@@ -15,10 +15,10 @@ function App() {
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <Wrapper>
           <Header />
-          <Router />
-        </Wrapper>
+          <Wrapper>
+            <Router />
+          </Wrapper>
       </QueryClientProvider>
     </ErrorBoundary>
   );

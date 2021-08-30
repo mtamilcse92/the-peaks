@@ -1,0 +1,16 @@
+@import '../../styles/index.scss';
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    background: $dark-blue-color;
+}
+
+.brandLogo {
+    height: 56px;
+    width: 142px;
+    padding: 20px 50px 20px 50px;
+}

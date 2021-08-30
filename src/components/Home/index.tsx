@@ -1,27 +1,23 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
+import Image from '../common/Image';
+import Spinner from '../common/Spinner';
+import Dropdown from '../common/Dropdown';
+import Bookmark from '../common/Bookmark';
+import ContentCard from '../common/ContentCard';
 import { useStories } from '../../hooks/stories'
 
+{/* <Image imageURL="https://www.industrialempathy.com/img/remote/ZiClJf-1280w.avif" /> */}
 const Home = () => {
     const { data } = useStories()
-    console.log('---->>>>', data);
     
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Image />
+        <Spinner isVisible />
+        <Dropdown />
+        <Bookmark label="ADD BOOKMARK" onClick={() => {}} />
+        <ContentCard description="Hellooo..." title="Test title client" subtitle="helloooo" />
       </div>
     );
 }
