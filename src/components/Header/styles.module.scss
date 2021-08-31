@@ -5,6 +5,10 @@
 .container {
     display: flex;
     align-items: flex-end;
+    padding: 0px 120px;
+    @include media(mobile) {
+        padding: 0px 16px;
+    }
     justify-content: space-between;
     background: $dark-blue-color;
 }
@@ -12,5 +16,6 @@
 .brandLogo {
     height: 56px;
     width: 142px;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 0px;
+    cursor: pointer;
 }

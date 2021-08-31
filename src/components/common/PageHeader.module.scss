@@ -1,0 +1,40 @@
+@import '../../styles/index.scss';
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px;
+    justify-content: space-between;
+    @include media(mobile) {
+        padding: 0px;
+        padding-bottom: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.heading {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 49px;
+
+    color: rgba(0, 0, 0, 0.87);
+    @include media(mobile) {
+        padding-bottom: 10px;
+    }
+}
+
+.rhs {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    @include media(mobile) {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

@@ -3,6 +3,7 @@ import Image from "./Image";
 import styles from "./ContentCard.module.scss";
 
 export type Props = {
+  onClick?: () => void
   imageUrl?: string;
   showImage?: boolean;
   title?: string;
@@ -14,11 +15,12 @@ const ContentCard: React.FC<Props> = ({
   showImage,
   imageUrl,
   title,
+  onClick,
   subtitle,
   description,
 }) => {
   return (
-    <div className={styles.container}>
+    <article onClick={onClick} className={styles.container}>
       {showImage && (
         <div className={styles.imageContainer}>
           <Image imageURL={imageUrl} />
@@ -33,7 +35,7 @@ const ContentCard: React.FC<Props> = ({
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

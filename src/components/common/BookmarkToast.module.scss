@@ -4,17 +4,25 @@
 
 .container {
     display: flex;
+    flex: 1;
     align-items: center;
-    outline: none;
-    border: none;
-    background: none;
+    justify-content: center;
     border-radius: 4px;
     padding: 5px 12px;
     cursor: pointer;
     background-color: $dark-blue-color;
-    @include media(mobile) {
-        margin-top: 10px;
-    }
+}
+
+.warning {
+    background: $dark-amber-color;
+}
+
+.error {
+    background: $red-color;
+}
+
+.succuss {
+    background: $green-color;
 }
 
 .icon {

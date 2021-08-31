@@ -1,0 +1,22 @@
+@import '../../styles/index.scss';
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content {
+    display: flex;
+    height: 400px;
+    width: 350px;
+    margin: 10px;
+}

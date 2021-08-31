@@ -4,9 +4,7 @@
 
 .container {
     display: flex;
-    flex-direction: column;
-    padding: 40px 120px;
-    @include media(mobile) {
-        padding: 40px 16px;
-    }
+    align-items: center;
+    height: 200px;
+    background: $dark-blue-color;
 }

@@ -1,25 +1,55 @@
-import React from 'react';
-import logo from '../../assets/logo.svg';
-import Image from '../common/Image';
-import Spinner from '../common/Spinner';
-import Dropdown from '../common/Dropdown';
-import Bookmark from '../common/Bookmark';
-import ContentCard from '../common/ContentCard';
-import { useStories } from '../../hooks/stories'
+import React, { Fragment } from "react";
+import { useHistory } from "react-router-dom";
+import Spinner from "../common/Spinner";
+import Dropdown from "../common/Dropdown";
+import Bookmark from "../common/Bookmark";
+import PageHeader from "../common/PageHeader";
+import ContentCard from "../common/ContentCard";
+import { useStories } from "../../hooks/stories";
+import { paths } from '../../constants/router';
+import { PersistContext } from '../../context/persistContext';
+import styles from "./styles.module.scss";
 
-{/* <Image imageURL="https://www.industrialempathy.com/img/remote/ZiClJf-1280w.avif" /> */}
 const Home = () => {
-    const { data } = useStories()
-    
-    return (
-      <div className="App">
-        <Image />
-        <Spinner isVisible />
-        <Dropdown />
-        <Bookmark label="ADD BOOKMARK" onClick={() => {}} />
-        <ContentCard description="Hellooo..." title="Test title client" subtitle="helloooo" />
-      </div>
-    );
-}
+  const history = useHistory();
+  const {state: persistState} = React.useContext(PersistContext)
+  const q = persistState.searchText || ''
+  const query = q ? { q } : {}
+  const { data, refetch, isFetching, isLoading } = useStories(query);
+  const showLoader = isFetching || isLoading;
+
+  React.useEffect(() => {
+    refetch()
+  }, [refetch, q])
+
+  return (
+    <section className={styles.container}>
+      <PageHeader
+        title={(q || '').length !== 0 ? "Search Result" : "Top stories"}
+        rhsElement={
+          <Fragment>
+            <Bookmark label="VIEW BOOKMARK" onClick={() => history.push(paths.bookmarks)} />
+            <Dropdown />
+          </Fragment>
+        }
+      />
+      {showLoader && <Spinner isVisible />}
+      {!showLoader && (
+        <div className={styles.contentWrapper}>
+          {data?.map((item) => (
+            <div key={item.id} className={styles.content}>
+              <ContentCard
+                onClick={() => history.push(`${paths.contentDetail}?id=${item.id}`)}
+                title={item.webTitle}
+                imageUrl={item?.fields?.thumbnail}
+                subtitle={item?.fields?.headline}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  );
+};
 
 export default Home;

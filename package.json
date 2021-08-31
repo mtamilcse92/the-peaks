@@ -12,7 +12,11 @@
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
+    "date-fns": "^2.23.0",
     "guardian-js": "^4.0.0",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
+    "qs": "^6.10.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.21.0",
@@ -48,6 +52,8 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash.debounce": "^4.0.6",
+    "@types/qs": "^6.9.7",
     "@types/react-router-dom": "^5.1.8"
   }
 }

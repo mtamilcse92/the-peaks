@@ -4,8 +4,10 @@
 
 .container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    width: 100%;
+    @include media(mobile) {
+        width: 100%;
+    }
 }
 
 .defaultImage {
@@ -14,6 +16,9 @@
     justify-content: center;
     width: 100%;
     padding: 40px 0px;
+    @include media(mobile) {
+        width: 320px;
+    }
     background: $dark-blue-xx-color;
     .brandImage {
         width: 250px;

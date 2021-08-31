@@ -9,7 +9,7 @@ export type Props = {
 
 const Bookmark: React.FC<Props> = ({ label, onClick }) => {
   return (
-    <button className={styles.container}>
+    <button onClick={onClick} className={styles.container}>
         <BookmarkImage className={styles.icon} />
         <span className={styles.label}>{label}</span>
     </button>

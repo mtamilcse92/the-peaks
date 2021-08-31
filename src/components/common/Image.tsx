@@ -16,7 +16,7 @@ const Image: React.FC<Props> = ({ imageURL }) => {
   if (!imageURL) {
     return <DefaultImage />;
   }
-  return <img src={imageURL} alt="Unknown" />;
+  return <img src={imageURL} className={styles.container} alt="Unknown" />;
 };
 
 export default Image;
