@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as BookmarkImage }  from "../../assets/bookmark_24px.svg";
-import styles from "./Bookmark.module.scss";
+import { ReactComponent as BookmarkImage }  from "../../../assets/bookmark_24px.svg";
+import styles from "./styles.module.scss";
 
 export type Props = {
   label: string;

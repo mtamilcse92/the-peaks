@@ -13,14 +13,15 @@ import styles from "./styles.module.scss";
 const Home = () => {
   const history = useHistory();
   const {state: persistState} = React.useContext(PersistContext)
+  const [sortBy, setSortBy] = React.useState<string>('relevance')
   const q = persistState.searchText || ''
-  const query = q ? { q } : {}
+  const query = q ? { q, 'order-by': sortBy } : { 'order-by': sortBy }
   const { data, refetch, isFetching, isLoading } = useStories(query);
   const showLoader = isFetching || isLoading;
 
   React.useEffect(() => {
     refetch()
-  }, [refetch, q])
+  }, [refetch, q, sortBy])
 
   return (
     <section className={styles.container}>
@@ -29,7 +30,7 @@ const Home = () => {
         rhsElement={
           <Fragment>
             <Bookmark label="VIEW BOOKMARK" onClick={() => history.push(paths.bookmarks)} />
-            <Dropdown />
+            <Dropdown onSelect={(item) => setSortBy(item.value)} />
           </Fragment>
         }
       />

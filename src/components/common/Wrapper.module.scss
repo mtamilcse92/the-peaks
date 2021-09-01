@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column;
     padding: 40px 120px;
+    min-height: 70vh; 
+    position:relative;
     @include media(mobile) {
         padding: 40px 16px;
     }

@@ -10,26 +10,27 @@ import { storageKey, getItems } from '../../utils/localStorage'
 import styles from "./styles.module.scss";
 
 const Bookmarks = () => {
-  //   const query = useQuery();
-  //   const { id } = query.get("id");
   const history = useHistory();
+  const [sortBy, setSortBy] = React.useState<string>('relevance')
   const bookmarkList = getItems(storageKey.bookmark)
-  console.log(bookmarkList);
   
 
-  const { data, isFetching, isLoading } = useStories({ ids: bookmarkList.join(',')});
+  const { data, isFetching, isLoading, refetch } = useStories({ ids: bookmarkList.join(','), 'order-by': sortBy });
   const showLoader = isFetching || isLoading;
+
+  React.useEffect(() => {
+    refetch()
+  }, [sortBy, refetch])
 
   return (
     <section className={styles.container}>
-      <PageHeader title="All bookmark" rhsElement={<Dropdown />} />
+      <PageHeader title="All bookmark" rhsElement={<Dropdown onSelect={(item) => setSortBy(item.value)} />} />
       {showLoader && <Spinner isVisible />}
       {!showLoader && <div className={styles.contentWrapper}>
           {data?.map((item) => (
             <div key={item.id} className={styles.content}>
               <ContentCard
                 onClick={() => history.push(`${paths.contentDetail}?id=${item.id}`)}
-                description={item.fields.body}
                 imageUrl={item?.fields?.thumbnail}
                 subtitle={item?.fields?.headline}
               />

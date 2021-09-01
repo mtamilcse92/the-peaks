@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "./Image";
-import styles from "./ContentCard.module.scss";
+import Image from "../Image";
+import styles from "./styles.module.scss";
 
 export type Props = {
   onClick?: () => void

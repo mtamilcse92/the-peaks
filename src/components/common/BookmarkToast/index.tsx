@@ -1,8 +1,8 @@
 import React from "react";
 import CX from "classnames";
-import { ReactComponent as BookmarkFilledImage } from "../../assets/bookmark_24px.svg";
-import { ReactComponent as BookmarkUnFilledImage } from "../../assets/bookmark_border_24px.svg";
-import styles from "./BookmarkToast.module.scss";
+import { ReactComponent as BookmarkFilledImage } from "../../../assets/bookmark_24px.svg";
+import { ReactComponent as BookmarkUnFilledImage } from "../../../assets/bookmark_border_24px.svg";
+import styles from "./styles.module.scss";
 
 export type Props = {
   isVisible: boolean

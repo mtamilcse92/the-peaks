@@ -10,8 +10,6 @@ const Header = () => {
   const history = useHistory();
   const {state: persistState, actions} = React.useContext(PersistContext)
   const {setState} = actions
-  console.log(actions);
-  
 
   return (
     <header className={styles.container}>

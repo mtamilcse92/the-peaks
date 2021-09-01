@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from "./PageHeader.module.scss";
+import styles from "./styles.module.scss";
 
 export type Props = {
     title: string

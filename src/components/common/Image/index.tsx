@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactComponent as BrandImage } from "../../assets/brand-icon.svg";
-import styles from "./Image.module.scss";
+import { ReactComponent as BrandImage } from "../../../assets/brand-icon.svg";
+import styles from "./styles.module.scss";
 
 export type Props = {
   imageURL?: string;

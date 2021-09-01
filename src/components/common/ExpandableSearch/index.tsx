@@ -1,6 +1,6 @@
 import React from "react";
 import debounce from 'lodash.debounce';
-import styles from "./ExpandableSearch.module.scss";
+import styles from "./styles.module.scss";
 
 export type Props = {
   onChange: (val: string) => void;

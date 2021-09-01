@@ -15,12 +15,8 @@ const ContentDetail = () => {
   const [showToast, setShowToast] = React.useState<boolean>(false)
   const values: any = query.get("id");
 
-  console.log(isAddedToBookmark, showToast);
-  
-
   React.useEffect(() => {
     const bookmarkList = getItems(storageKey.bookmark)
-    console.log((bookmarkList || []).includes(values));
     
     setAddedToBookmark((bookmarkList || []).includes(values))
   }, [values])
