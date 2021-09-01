@@ -3,4 +3,4 @@ export interface ISearchParam {
     q?: string
     'order-by'?: string
 }
-export type TSearchStories = (query?: ISearchParam) => Promise<[any]>
+export type TSearchStories = (query?: ISearchParam) => Promise<any[]>

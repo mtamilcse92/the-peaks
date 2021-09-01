@@ -19,6 +19,8 @@ const ExpandableSearch: React.FC<Props> = ({ value, placeholder, onChange }) => 
     setLocalValue(value)
     debounceChange(value)
   }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceChange = React.useCallback(
     debounce((_searchVal: string) => {
       onChange(_searchVal);

@@ -29,7 +29,7 @@ const ContentDetail = () => {
   const showLoader = isFetching || isLoading;
   const [content] = data;
 
-  if (showLoader) {
+  if (showLoader || !content) {
     return <Spinner isVisible />;
   }
 

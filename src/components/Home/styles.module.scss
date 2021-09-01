@@ -19,4 +19,7 @@
     height: 400px;
     width: 350px;
     margin: 10px;
+    @include media(tablet) {
+        width: 312px;
+    }
 }

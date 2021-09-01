@@ -7,4 +7,4 @@ const defaultSearchParam = {
 }
 
 export const searchStories: TSearchStories = (params = {}) =>
-    axios.get(`/search`, { params: { ...params, ...defaultSearchParam  } }).then((res) => res.data?.response?.results || [])
+    axios.get(`/search`, { params: { ...params, ...defaultSearchParam  } }).then((res) => res.data?.response?.results || []).catch((err) => {throw err; })

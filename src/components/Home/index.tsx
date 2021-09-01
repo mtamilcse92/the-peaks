@@ -37,7 +37,7 @@ const Home = () => {
       {showLoader && <Spinner isVisible />}
       {!showLoader && (
         <div className={styles.contentWrapper}>
-          {data?.map((item) => (
+          {data?.map((item: any) => (
             <div key={item.id} className={styles.content}>
               <ContentCard
                 onClick={() => history.push(`${paths.contentDetail}?id=${item.id}`)}

@@ -17,7 +17,7 @@
     width: 100%;
     padding: 40px 0px;
     @include media(mobile) {
-        width: 320px;
+        width: 100%;
     }
     background: $dark-blue-xx-color;
     .brandImage {
